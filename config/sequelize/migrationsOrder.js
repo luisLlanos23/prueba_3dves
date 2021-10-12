@@ -5,6 +5,7 @@ const tablesMigrationOrder = {
     { filename: 'books' },
     { filename: 'categories' },
     { filename: 'bookscategories' },
+    { filename: 'sales' },
   ],
 };
 
