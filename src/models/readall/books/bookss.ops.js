@@ -40,7 +40,7 @@ module.exports = {
     return readUser;
   },
 
-  readBook: async (conditions) => {
+  readBooks: async (conditions) => {
     const readUser = await sql.readall.models.books.findAll({
       include: [
         {
