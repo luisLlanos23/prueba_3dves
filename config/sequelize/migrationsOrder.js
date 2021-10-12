@@ -3,6 +3,7 @@ const tablesMigrationOrder = {
     { filename: 'users' },
     { filename: 'authors' },
     { filename: 'books' },
+    { filename: 'categories' },
   ],
 };
 

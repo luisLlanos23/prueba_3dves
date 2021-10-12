@@ -10,7 +10,7 @@ module.exports = {
   },
 
   insert: async (data) => {
-    const result = await sql.readall.models.books.bulkCreate(data);
+    const result = await sql.readall.models.books.create(data);
     return result;
   },
 
