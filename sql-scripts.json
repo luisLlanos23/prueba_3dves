@@ -1,0 +1,7 @@
+{
+  "readall": {
+    "createDb": "sequelize-cli --config ./config/sequelize/databases.js --options-path ./config/sequelize/rc/sequelizerc.readall.js --env readall db:create",
+    "migrateTables": "sequelize-cli --config ./config/sequelize/databases.js --options-path ./config/sequelize/rc/sequelizerc.readall.js --env readall db:migrate",
+    "addSeeds": "sequelize-cli --config ./config/sequelize/databases.js --options-path ./config/sequelize/rc/sequelizerc.readall.js --env readall db:seed:all"
+  }
+}
