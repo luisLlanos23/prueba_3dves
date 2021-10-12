@@ -4,5 +4,6 @@ const endpointValidator = require('../../libraries/middlewares/endpoint-validato
 const { createBooks } = require('./schema');
 
 app.post('/', endpointValidator(createBooks), controller.createBooks);
+app.get('/', controller.readBooks);
 
 module.exports = app;

@@ -4,6 +4,7 @@ const tablesMigrationOrder = {
     { filename: 'authors' },
     { filename: 'books' },
     { filename: 'categories' },
+    { filename: 'bookscategories' },
   ],
 };
 

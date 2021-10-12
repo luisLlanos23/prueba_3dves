@@ -1,4 +1,8 @@
+const categoriesBooks = require('../bookscategories/bookscategories.model');
+
 module.exports = (ConnectionInterface, DataTypes) => {
+  const caregoryBooks = categoriesBooks(ConnectionInterface, DataTypes);
+
   const books = ConnectionInterface.define('books', {
     id: {
       type          : DataTypes.INTEGER,
@@ -30,6 +34,8 @@ module.exports = (ConnectionInterface, DataTypes) => {
     freezeTableName : true,
     tableName       : 'books',
   });
+
+  books.hasMany(caregoryBooks, { foreignKey: 'idBook', sourceKey: 'id' });
 
   return books;
 };

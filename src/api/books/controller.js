@@ -7,4 +7,10 @@ module.exports = {
       return next(await booksServices.createBooks(booksData));
     } catch (error) { return next({ error }); }
   },
+
+  readBooks: async (req, res, next) => {
+    try {
+      return next(await booksServices.readBooks());
+    } catch (error) { return next({ error }); }
+  },
 };
