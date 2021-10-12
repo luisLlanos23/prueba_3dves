@@ -11,16 +11,9 @@ module.exports = {
   },
 
   get_logout: Joi.object({
-    headers: Joi.object({
-    }),
-
-    params: Joi.object({
-    }),
-
-    query: Joi.object({
-    }),
-
-    body: Joi.object({
-    }),
+    headers : Joi.object({}),
+    params  : Joi.object({}),
+    query   : Joi.object({}),
+    body    : Joi.object({ }),
   }),
 };
