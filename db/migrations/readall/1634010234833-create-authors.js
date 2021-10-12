@@ -1,6 +1,6 @@
 module.exports = {
   up: (queryInterface, DataTypes) => {
-    const books = queryInterface.createTable('books', {
+    const authors = queryInterface.createTable('authors', {
       id: {
         type          : DataTypes.INTEGER,
         autoIncrement : true,
@@ -11,18 +11,18 @@ module.exports = {
         type      : DataTypes.STRING(64),
         allowNull : false,
       },
-      baseprice: {
-        type      : DataTypes.FLOAT(11),
+      lastname: {
+        type      : DataTypes.STRING(64),
         allowNull : false,
       },
     }, {
       timestamps      : false,
       freezeTableName : true,
-      tableName       : 'books',
+      tableName       : 'authors',
     });
 
-    return books;
+    return authors;
   },
 
-  down: (queryInterface) => queryInterface.dropTable('books'),
+  down: (queryInterface) => queryInterface.dropTable('authors'),
 };

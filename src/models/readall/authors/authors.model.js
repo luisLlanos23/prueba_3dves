@@ -1,5 +1,5 @@
 module.exports = (ConnectionInterface, DataTypes) => {
-  const books = ConnectionInterface.define('books', {
+  const authors = ConnectionInterface.define('authors', {
     id: {
       type          : DataTypes.INTEGER,
       autoIncrement : true,
@@ -10,26 +10,15 @@ module.exports = (ConnectionInterface, DataTypes) => {
       type      : DataTypes.STRING(64),
       allowNull : false,
     },
-    baseprice: {
-      type      : DataTypes.FLOAT(11),
+    lastname: {
+      type      : DataTypes.STRING(64),
       allowNull : false,
-    },
-    author: {
-      type       : DataTypes.INTEGER,
-      allowNull  : false,
-      references : {
-        model : 'authors',
-        key   : 'id',
-      },
-      onUpdate : 'CASCADE',
-      onDelete : 'CASCADE',
-
     },
   }, {
     timestamps      : false,
     freezeTableName : true,
-    tableName       : 'books',
+    tableName       : 'authors',
   });
 
-  return books;
+  return authors;
 };
