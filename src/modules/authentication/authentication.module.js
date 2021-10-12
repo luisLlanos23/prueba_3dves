@@ -1,6 +1,6 @@
 const passport = require('passport');
 const { ExtractJwt, Strategy: JwtStrategy } = require('passport-jwt');
-const userModels = require('../../models/pilc/users/users.ops');
+const userModels = require('../../models/readall/users/users.ops');
 const config = require('../../../config/config');
 
 const authOptions = {

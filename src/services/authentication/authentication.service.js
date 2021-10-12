@@ -7,7 +7,6 @@ module.exports = {
   async authenticateUser(userParams) {
     const { username, password, rememberme } = userParams;
     const userData = await userModels.read({ username });
-
     if (!userData.length) {
       throw authenticationError.authenticationError();
     }
