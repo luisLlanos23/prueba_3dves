@@ -5,6 +5,9 @@ module.exports = {
     const result = await sql.readall.models.categories.findAll({
       raw   : true,
       where : { ...options },
+      order : [
+        ['id', 'ASC'],
+      ],
     });
     return { result };
   },

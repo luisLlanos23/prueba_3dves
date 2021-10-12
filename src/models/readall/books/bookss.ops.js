@@ -1,7 +1,46 @@
+const { literal } = require('sequelize');
 const sql = require('../../sql');
 
 module.exports = {
-  readBooks: async (conditions) => {
+  readBooksbyAuthor: async (conditions) => {
+    const readUser = await sql.readall.models.books.findAll({
+      include: [
+        {
+          model      : sql.readall.models.bookscategories,
+          required   : false,
+          attributes : ['idBook'],
+          include    : [
+            {
+              model    : sql.readall.models.categories,
+              required : false,
+            }],
+        }],
+      where: { ...conditions },
+
+    });
+    return readUser;
+  },
+
+  readBooksbyCategory: async (conditions) => {
+    const readUser = await sql.readall.models.books.findAll({
+      include: [
+        {
+          model      : sql.readall.models.bookscategories,
+          required   : false,
+          attributes : ['idBook'],
+          include    : [
+            {
+              model    : sql.readall.models.categories,
+              required : false,
+            }],
+        }],
+      where: literal(`readall.bookscategories.idCategory = ${conditions.category}`),
+
+    });
+    return readUser;
+  },
+
+  readBook: async (conditions) => {
     const readUser = await sql.readall.models.books.findAll({
       include: [
         {

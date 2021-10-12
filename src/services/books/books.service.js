@@ -20,4 +20,14 @@ module.exports = {
     const result = await booksModel.readBooks({});
     return { result };
   },
+
+  readBookById: async (conditionId) => {
+    let result;
+    if (Object.keys(conditionId) == 'author') {
+      result = await booksModel.readBooksbyAuthor(conditionId);
+    } else if (Object.keys(conditionId) == 'category') {
+      result = await booksModel.readBooksbyCategory(conditionId);
+    }
+    return { result };
+  },
 };

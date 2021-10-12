@@ -13,4 +13,11 @@ module.exports = {
       return next(await booksServices.readBooks());
     } catch (error) { return next({ error }); }
   },
+
+  readBook: async (req, res, next) => {
+    try {
+      const id = { ...req.params };
+      return next(await booksServices.readBookById(id));
+    } catch (error) { return next({ error }); }
+  },
 };

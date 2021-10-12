@@ -9,4 +9,22 @@ module.exports = {
       categories : Joi.array().items(Joi.number()).min(1).required(),
     }).label('body'),
   },
+
+  readBooksByAuthor: {
+    body    : Joi.object({}),
+    headers : Joi.object({}),
+    params  : Joi.object({
+      author: Joi.number().min(1),
+    }),
+    query: Joi.object({}),
+  },
+
+  readBooksByCategory: {
+    body    : Joi.object({}),
+    headers : Joi.object({}),
+    params  : Joi.object({
+      category: Joi.number().min(1),
+    }),
+    query: Joi.object({}),
+  },
 };
