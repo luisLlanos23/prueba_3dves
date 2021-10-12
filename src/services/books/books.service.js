@@ -12,11 +12,12 @@ module.exports = {
 
     const data = booksData.categories.map((row) => ({ idBook: response.id, idCategory: row }));
     await booksCategoriesModel.insert(data);
-    return {};
+    const result = await booksModel.readBooks({ id: response.id });
+    return { result };
   },
 
   readBooks: async () => {
-    const result = await booksModel.readBooks();
+    const result = await booksModel.readBooks({});
     return { result };
   },
 };

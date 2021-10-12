@@ -1,7 +1,7 @@
 const sql = require('../../sql');
 
 module.exports = {
-  readBooks: async () => {
+  readBooks: async (conditions) => {
     const readUser = await sql.readall.models.books.findAll({
       include: [
         {
@@ -14,6 +14,8 @@ module.exports = {
               required : false,
             }],
         }],
+      where: { ...conditions },
+
     });
     return readUser;
   },
